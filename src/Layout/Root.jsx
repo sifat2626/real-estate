@@ -1,7 +1,12 @@
+import { Outlet } from "react-router-dom";
+import Navbar from "../shared/Navbar/Navbar";
+import Footer from "../shared/Footer/Footer";
 function Root() {
   return (
     <div>
-      <h2>This is root</h2>
+      <Navbar />
+      <Outlet />
+      <Footer />
     </div>
   );
 }
