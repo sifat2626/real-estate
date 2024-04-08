@@ -2,7 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        open: "'Open Sans', 'sans-serif'",
+        mon: "'Montserrat', 'sans-serif'",
+      },
+      colors: {
+        "cozy-green": "#3E895B",
+      },
+    },
   },
   plugins: [require("daisyui")],
 };

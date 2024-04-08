@@ -1,7 +1,11 @@
+import Banner from "../../shared/Banner/Banner";
+import EstateCards from "../../shared/EstateCards/EstateCards";
+
 function Home() {
   return (
-    <div>
-      <h2>this is Home</h2>
+    <div className="">
+      <Banner />
+      <EstateCards />
     </div>
   );
 }

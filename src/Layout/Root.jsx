@@ -3,9 +3,11 @@ import Navbar from "../shared/Navbar/Navbar";
 import Footer from "../shared/Footer/Footer";
 function Root() {
   return (
-    <div>
+    <div className="font-open text-gray-700">
       <Navbar />
-      <Outlet />
+      <div className="custom-container">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

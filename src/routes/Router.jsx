@@ -4,6 +4,10 @@ import ErrorPage from "../pages/Error/ErrorPage";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import Rent from "../pages/Rent/Rent";
+import Buy from "../pages/Buy/Buy";
+import About from "../pages/About/About";
+import Contact from "../pages/Contact/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +26,22 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/buy",
+        element: <Buy />,
+      },
+      {
+        path: "/rent",
+        element: <Rent />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
     ],
   },
