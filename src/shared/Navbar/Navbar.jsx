@@ -46,7 +46,7 @@ function Navbar() {
     </>
   );
   return (
-    <div className="navbar bg-cozy-green custom-container text-white py-8 rounded-lg px-4 my-12">
+    <div className="navbar bg-cozy-green custom-container text-white py-8 rounded-lg px-4 mt-2">
       <div className="navbar-start">
         <div className="dropdown">
           <div

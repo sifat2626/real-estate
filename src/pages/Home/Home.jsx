@@ -1,11 +1,11 @@
 import Banner from "../../shared/Banner/Banner";
-import EstateCards from "../../shared/EstateCards/EstateCards";
+import EstateContainer from "../../shared/EstateContainer/EstateContainer";
 
 function Home() {
   return (
     <div className="">
       <Banner />
-      <EstateCards />
+      <EstateContainer />
     </div>
   );
 }
