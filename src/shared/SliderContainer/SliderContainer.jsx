@@ -31,7 +31,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "https://i.ibb.co/zhs0M8F/loft.jpg",
+    image: "https://i.ibb.co/7N9GzbY/sea-side.jpg",
     title: "Sleek Modern Living Spaces",
     description:
       "Embrace the energy of downtown living with our chic modern lofts, meticulously designed to offer style, convenience, and sophistication.",
@@ -60,8 +60,8 @@ function SliderContainer() {
         slidesPerView={1}
         pagination={{ clickable: true }}
         loop={true} // Enable looping
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        // onSwiper={(swiper) => }
+        // onSlideChange={() => }
         className="rounded-3xl overflow-hidden"
       >
         {slides.map((slide) => (

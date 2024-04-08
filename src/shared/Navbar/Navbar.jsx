@@ -4,7 +4,7 @@ import { FiMenu } from "react-icons/fi";
 
 function Navbar() {
   const menuClassName =
-    "hover:bg-[#2BAC6E] p-2 rounded-lg font-semibold lg:focus:bg-[#2BAC6E] focus:bg-gray-200 focus:text-gray-200";
+    "hover:bg-[#2BAC6E] p-2 rounded-lg font-semibold lg:focus:bg-[#2BAC6E] focus:bg-gray-200 focus:text-gray-700";
   const navList = (
     <>
       <li>
@@ -63,7 +63,9 @@ function Navbar() {
             {navList}
           </ul>
         </div>
-        <a className="font-bold  text-xl">CozyCrest</a>
+        <Link to={"/"} className="font-bold  text-xl">
+          CozyCrest
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className=" flex gap-4 items-center">{navList}</ul>

@@ -8,6 +8,7 @@ import Rent from "../pages/Rent/Rent";
 import Buy from "../pages/Buy/Buy";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
+import EstateDetails from "../pages/EstateDetails/EstateDetails";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,11 @@ export const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/details/:id",
+        element: <EstateDetails />,
+        loader: () => fetch("/estateData.json"),
       },
     ],
   },
