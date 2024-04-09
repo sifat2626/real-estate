@@ -24,18 +24,18 @@ function Navbar() {
       </li>
 
       <li>
-        <NavLink to={"/buy"} className={menuClassName}>
+        <NavLink to={"/listings?type=sale"} className={menuClassName}>
           Buy
         </NavLink>
       </li>
       <li>
-        <NavLink to={"/rent"} className={menuClassName}>
+        <NavLink to={"/listings?type=rent"} className={menuClassName}>
           Rent
         </NavLink>
       </li>
       <li>
-        <NavLink to={"/contact"} className={menuClassName}>
-          Contact
+        <NavLink to={"/listings"} className={menuClassName}>
+          Listings
         </NavLink>
       </li>
       <li>
