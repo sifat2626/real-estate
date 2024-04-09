@@ -11,7 +11,16 @@ function Listings() {
   const type = searchParams.get("type");
   const allData = useLoaderData();
   const filteredData = allData.filter((data) => {
-    return data.status === type;
+    if (type && category) {
+      return data.status === type && data.segment_name === category;
+    }
+    if (!category && type) {
+      return data.status === type;
+    }
+    if (category && !type) {
+      return data.segment_name === category;
+    }
+    return true;
   });
   console.log(filteredData);
   console.log(category, type);
