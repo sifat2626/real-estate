@@ -1,10 +1,18 @@
 import { Link, NavLink } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { FiMenu } from "react-icons/fi";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 function Navbar() {
+  const { user, logout } = useContext(AuthContext);
+  const handleLogout = () => {
+    logout()
+      .then()
+      .catch((error) => console.log(error.message));
+  };
   const menuClassName =
-    "hover:bg-[#2BAC6E] p-2 rounded-lg font-semibold lg:focus:bg-[#2BAC6E] focus:bg-gray-200 focus:text-gray-700";
+    "hover:bg-[#2BAC6E] p-2 rounded-lg font-semibold lg:focus:bg-[#2BAC6E] focus:bg-gray-200 focus:text-white";
   const navList = (
     <>
       <li>
@@ -71,9 +79,13 @@ function Navbar() {
         <ul className=" flex gap-4 items-center">{navList}</ul>
       </div>
       <div className="navbar-end">
-        <button className="bg-white text-cozy-green hover:shadow-md hover:bg-gray-200 py-2 px-4 rounded-lg font-semibold">
-          <Link to={"/login"}>Login</Link>
-        </button>
+        <div className="bg-white text-cozy-green hover:shadow-md hover:bg-gray-200 py-2 px-4 rounded-lg font-semibold">
+          {!user ? (
+            <Link to={"/login"}>Login</Link>
+          ) : (
+            <button onClick={handleLogout}>Logout</button>
+          )}
+        </div>
       </div>
     </div>
   );

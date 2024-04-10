@@ -14,7 +14,7 @@ function EstateCard({
   facilities,
   type,
 }) {
-  const isSmall = type === "sm";
+  const isSmall = type !== "sm";
 
   return (
     <div
@@ -41,15 +41,15 @@ function EstateCard({
       >
         <div className="flex gap-2 items-center">
           <FaMoneyBillAlt className="text-2xl" />
-          <p className="">{price}</p>
+          <p className="text-lg font-bold">{price}</p>
         </div>
         <button className="text-3xl">
           <span className="">
             <ion-icon name="heart-outline"></ion-icon>
           </span>
-          <span className="">
+          {/* <span className="">
             <ion-icon name="heart"></ion-icon>
-          </span>
+          </span> */}
         </button>
       </div>
 
@@ -63,11 +63,7 @@ function EstateCard({
           </div>
         ))}
       </div>
-      <div
-        className={`flex items-center justify-between ${
-          isSmall ? "my-2" : "my-4"
-        }`}
-      >
+      <div className={`flex items-center justify-between mt-4`}>
         <Link
           to={`/details/${id}`}
           className="text-sm flex gap-2 items-center hover:bg-green-800 bg-cozy-green px-4 py-2 rounded-lg text-gray-200 font-semibold"

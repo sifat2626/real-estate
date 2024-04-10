@@ -10,6 +10,7 @@ import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import Listings from "../pages/Listings/Listings";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -31,11 +32,19 @@ export const router = createBrowserRouter([
       },
       {
         path: "/buy",
-        element: <Buy />,
+        element: (
+          <PrivateRoute>
+            <Buy />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/rent",
-        element: <Rent />,
+        element: (
+          <PrivateRoute>
+            <Rent />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/about",
@@ -47,12 +56,20 @@ export const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <EstateDetails />,
+        element: (
+          <PrivateRoute>
+            <EstateDetails />
+          </PrivateRoute>
+        ),
         loader: () => fetch("/estateData.json"),
       },
       {
         path: "/listings",
-        element: <Listings />,
+        element: (
+          <PrivateRoute>
+            <Listings />
+          </PrivateRoute>
+        ),
         loader: () => fetch("/estateData.json"),
       },
     ],

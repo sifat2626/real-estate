@@ -9,6 +9,7 @@ export default {
       },
       colors: {
         "cozy-green": "#3E895B",
+        "cozy-yellow": "#FFD166",
       },
     },
   },
