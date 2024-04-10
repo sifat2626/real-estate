@@ -62,13 +62,12 @@ function SideNav({ open, setOpen }) {
           !open ? "px-2.5" : "px-4 duration-300"
         }  py-2`}
       >
-        {!open && (
-          <FaSearch
-            className={`text-cozy-green text-lg block float-left cursor-pointer ${
-              open && "mr-2"
-            } `}
-          />
-        )}
+        <FaSearch
+          className={`text-cozy-green text-lg block float-left cursor-pointer ${
+            open && "mr-2"
+          } `}
+        />
+
         <input
           type="search"
           placeholder="Search"

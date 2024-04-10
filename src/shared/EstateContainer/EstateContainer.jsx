@@ -18,7 +18,7 @@ function EstateContainer() {
         heading={"Find Your Dream Property"}
         text={`Explore our curated collection of premium listings. Your perfect home is waiting to be discovered. Start exploring today.`}
       />
-      <div className="grid lg:grid-cols-3 gap-6 gap-y-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-6">
         {estateData?.slice(0, 9).map((estate) => (
           <EstateCard
             key={estate.id}
@@ -34,7 +34,7 @@ function EstateContainer() {
       </div>
       <div className="mt-8 text-center">
         <Link
-          to={`/`}
+          to={`/listings`}
           className=" hover:bg-green-800 bg-cozy-green px-4 py-2 rounded-3xl text-gray-200 font-semibold"
         >
           View All

@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../shared/Navbar/Navbar";
 import Footer from "../shared/Footer/Footer";
+import { Toaster } from "react-hot-toast";
 function Root() {
   return (
     <div className="font-open text-cozy-green">
@@ -9,6 +10,7 @@ function Root() {
         <Outlet />
       </div>
       <Footer />
+      <Toaster position="top-right" />
     </div>
   );
 }

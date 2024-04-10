@@ -11,6 +11,7 @@ import Contact from "../pages/Contact/Contact";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import Listings from "../pages/Listings/Listings";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 
 export const router = createBrowserRouter([
   {
@@ -71,6 +72,14 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("/estateData.json"),
+      },
+      {
+        path: "/update-profile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile />
+          </PrivateRoute>
+        ),
       },
     ],
   },

@@ -80,7 +80,7 @@ function EstateDetails() {
       {similarItems.length > 0 && (
         <div className="mt-12">
           <h3 className="font-semibold text-xl">Similar Items...</h3>
-          <div className="grid grid-cols-3 gap-x-4 gap-y-4 mt-2">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4 mt-2">
             {similarItems.map((item, i) => (
               <div
                 className="border-2 border-cozy-green rounded-3xl p-4"

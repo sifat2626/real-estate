@@ -79,13 +79,46 @@ function Navbar() {
         <ul className=" flex gap-4 items-center">{navList}</ul>
       </div>
       <div className="navbar-end">
-        <div className="bg-white text-cozy-green hover:shadow-md hover:bg-gray-200 py-2 px-4 rounded-lg font-semibold">
-          {!user ? (
+        {!user && (
+          <div className="bg-white text-cozy-green hover:shadow-md hover:bg-gray-200 py-2 px-4 rounded-lg font-semibold">
             <Link to={"/login"}>Login</Link>
-          ) : (
-            <button onClick={handleLogout}>Logout</button>
-          )}
-        </div>
+          </div>
+        )}
+
+        {user && (
+          <div className="tooltip" data-tip={`${user.displayName}`}>
+            <div className="dropdown dropdown-end ">
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar"
+              >
+                <div className="w-10 rounded-full tooltip" data-tip="hello">
+                  <button className="">
+                    <img
+                      alt="Tailwind CSS Navbar component"
+                      src={user.photoURL}
+                    />
+                  </button>
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-cozy-green font-semibold"
+              >
+                <li>
+                  <Link to={"/update-profile"} className="justify-between">
+                    Update Profile
+                  </Link>
+                </li>
+
+                <li>
+                  <button onClick={handleLogout}>Logout</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

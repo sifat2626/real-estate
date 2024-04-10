@@ -46,7 +46,7 @@ function Listings() {
               status={estate.status}
               facilities={estate.facilities}
               image={estate.image}
-              type={"sm"}
+              // type={"sm"}
             />
           ))}
         </div>
