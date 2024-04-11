@@ -3,13 +3,14 @@ import { IoSearch } from "react-icons/io5";
 import { FiMenu } from "react-icons/fi";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { toast } from "react-hot-toast";
 
 function Navbar() {
   const { user, logout } = useContext(AuthContext);
   const handleLogout = () => {
     logout()
       .then()
-      .catch((error) => console.log(error.message));
+      .catch((error) => toast.error(error.message));
   };
   const menuClassName =
     "hover:bg-[#2BAC6E] p-2 rounded-lg font-semibold lg:focus:bg-[#2BAC6E] focus:bg-gray-200 focus:text-white";
@@ -54,7 +55,7 @@ function Navbar() {
     </>
   );
   return (
-    <div className="navbar bg-cozy-green custom-container text-white py-8 rounded-lg px-4 mt-2">
+    <div className="navbar bg-cozy-green text-white py-8 rounded-lg px-4 mt-2">
       <div className="navbar-start">
         <div className="dropdown">
           <div
@@ -97,7 +98,8 @@ function Navbar() {
                   <button className="">
                     <img
                       alt="Tailwind CSS Navbar component"
-                      src={user.photoURL}
+                      src={user?.photoURL}
+                      className="object-cover"
                     />
                   </button>
                 </div>

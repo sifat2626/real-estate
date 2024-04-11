@@ -1,20 +1,28 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import useDocumentTitle from "../../utils/useDocumentTitle";
 
 function UpdateProfile() {
+  useDocumentTitle("Cozy | Update Profile");
   const { user, updateUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleUpdateUser = (name, photoURL) => {
     updateUser(name, photoURL)
-      .then((result) => console.log(name))
-      .catch((error) => console.log(error));
+      .then(() => {
+        toast.success("Profile Updated Successfully!");
+        navigate("/");
+        window.location.reload();
+      })
+      .catch((error) => toast.error(error.message));
   };
 
   const handleUpdateProfile = (e) => {
     e.preventDefault();
     const displayName = e.target.name.value || user.displayName;
     const photoURL = e.target.photo.value || user.photoURL;
-    console.log(displayName, photoURL);
     handleUpdateUser(displayName, photoURL);
   };
   return (

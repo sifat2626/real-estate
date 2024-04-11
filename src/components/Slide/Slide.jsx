@@ -24,7 +24,7 @@ function Slide({ image, title, description, buttonLabel, buttonLink }) {
           <p className="lg:text-lg mb-4">{description}</p>
           <a
             href={buttonLink}
-            className="btn font-bold text-cozy-green text-lg"
+            className="btn font-bold bg-cozy-yellow outline-none border-none text-cozy-green text-lg"
           >
             {buttonLabel}
           </a>

@@ -37,7 +37,7 @@ function Footer() {
           </div>
         </div>
 
-        <p className="text-center pt-12 pb-8 font-semibold lg:text-xl font-mon">
+        <p className="text-center pt-12 pb-2 font-semibold text-sm font-mon">
           Copyright © 2024 - All right reserved by CozyCrest
         </p>
       </div>

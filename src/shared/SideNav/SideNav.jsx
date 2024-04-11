@@ -1,37 +1,47 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { BsArrowLeftShort } from "react-icons/bs";
 import { MdRealEstateAgent } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
+import { useSearchParams } from "react-router-dom";
 
-function SideNav({ open, setOpen }) {
+function SideNav({ open, setOpen, data }) {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedType, setSelectedType] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const categories = [
-    "Category 1",
-    "Category 2",
-    "Category 3",
-    // Add more categories as needed
-  ];
+  const categories = new Set();
+  data.forEach((data) => categories.add(data.segment_name));
 
   const types = ["Buy", "Rent"];
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
+    if (selectedType) {
+      setSearchParams(`{type=${selectedType}}&category=${category}`);
+    } else {
+      setSearchParams(`category=${category}`);
+    }
     setOpen(false);
     // You can add further logic here, like filtering content based on the selected category
   };
 
   const handleTypeChange = (type) => {
     setSelectedType(type);
+    if (selectedCategory) {
+      setSearchParams(`type=${type}&category=${selectedCategory}`);
+    } else {
+      setSearchParams(`type=${type}`);
+    }
+
     setOpen(false);
     // You can add further logic here, like filtering content based on the selected type
   };
 
   return (
     <div
-      className={`bg-cozy-green mib-h-screen h-full p-5 pt-8 relative mt-4 rounded-3xl ${
+      className={`bg-cozy-green min-h-screen h-full p-5 pt-8 relative mt-4 rounded-3xl ${
         open ? "w-72" : "w-20"
       } duration-300`}
     >
@@ -80,12 +90,12 @@ function SideNav({ open, setOpen }) {
         <select
           className="block w-full px-4 py-2 mt-2 text-cozy-green bg-gray-200 border border-gray-300 rounded-md focus:outline-none focus:bg-white focus:border-cozy-green"
           onChange={(e) => handleCategoryChange(e.target.value)}
-          value={selectedCategory}
+          value={selectedCategory || ""}
         >
           <option value="" disabled>
             Select a category...
           </option>
-          {categories.map((category, index) => (
+          {[...categories].map((category, index) => (
             <option key={index} value={category}>
               {category}
             </option>
@@ -96,7 +106,7 @@ function SideNav({ open, setOpen }) {
         <select
           className="block w-full px-4 py-2 mt-2 text-cozy-green bg-gray-200 border border-gray-300 rounded-md focus:outline-none focus:bg-white focus:border-cozy-green"
           onChange={(e) => handleTypeChange(e.target.value)}
-          value={selectedType}
+          value={selectedType || ""}
         >
           <option value="" disabled>
             Select Buy/Rent...

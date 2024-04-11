@@ -9,7 +9,7 @@
     "area": "1,800 sq ft",
     "location": "123 Main Street, Anytown",
     "facilities": ["Living room", "Backyard garden", "Garage"],
-    "image": "image1.jpg",
+    "image": "https://i.ibb.co/7N9GzbY/sea-side.jpg",
     "lat": 40.7128,
     "lng": -74.006
   },
@@ -23,7 +23,7 @@
     "area": "2,500 sq ft",
     "location": "456 Elm Street, Cityville",
     "facilities": ["Spacious kitchen", "Community pool", "Fitness center"],
-    "image": "image2.jpg",
+    "image": "https://i.ibb.co/hDWmc61/townhouse.jpg",
     "lat": 34.0522,
     "lng": -118.2437
   },
@@ -41,13 +41,13 @@
       "24/7 security",
       "On-site laundry"
     ],
-    "image": "image3.jpg",
+    "image": "https://i.ibb.co/wB0F1GY/urban.jpg",
     "lat": 34.0522,
     "lng": -118.2437
   },
   {
     "id": 4,
-    "estate_title": "Student Housing Complex",
+    "estate_title": "Student Complex",
     "segment_name": "Student housing",
     "description": "A convenient and affordable option for college students.",
     "price": "$800/month",
@@ -55,7 +55,7 @@
     "area": "Shared accommodation",
     "location": "10 University Drive, Campus Town",
     "facilities": ["Furnished bedrooms", "Study lounge", "Fitness center"],
-    "image": "image4.jpg",
+    "image": "https://i.ibb.co/Tt4cVwL/student-housing.jpg",
     "lat": 40.4432,
     "lng": -79.9445
   },
@@ -69,13 +69,13 @@
     "area": "3,000 sq ft",
     "location": "789 Lakeview Drive, Lakeside Resort",
     "facilities": ["Private pool", "Game room", "Outdoor barbecue area"],
-    "image": "image5.jpg",
+    "image": "https://i.ibb.co/3RDwjM9/family-villa.jpg",
     "lat": 37.7749,
     "lng": -122.4194
   },
   {
     "id": 6,
-    "estate_title": "Senior Living Community",
+    "estate_title": "Senior Community",
     "segment_name": "Senior living",
     "description": "A peaceful community for retirees seeking comfort and convenience.",
     "price": "$3,500/month",
@@ -87,7 +87,7 @@
       "Restaurant-style dining",
       "Scheduled transportation"
     ],
-    "image": "image6.jpg",
+    "image": "https://i.ibb.co/PDKvnpg/studio-apartment.jpg",
     "lat": 42.3601,
     "lng": -71.0589
   },
@@ -101,7 +101,7 @@
     "area": "800 sq ft",
     "location": "456 Lakeside Avenue, Tranquil Haven",
     "facilities": ["Fireplace", "Private dock", "Outdoor seating area"],
-    "image": "image7.jpg",
+    "image": "https://i.ibb.co/2hPXtcd/lake-cottage.jpg",
     "lat": 43.0389,
     "lng": -87.9065
   },
@@ -115,13 +115,13 @@
     "area": "1,500 sq ft",
     "location": "123 Loft Avenue, Arts District",
     "facilities": ["Open-concept layout", "High ceilings", "Rooftop terrace"],
-    "image": "image8.jpg",
+    "image": "https://i.ibb.co/7N9GzbY/sea-side.jpg",
     "lat": 33.749,
     "lng": -84.388
   },
   {
     "id": 9,
-    "estate_title": "Family-friendly Townhome",
+    "estate_title": "Family Townhome",
     "segment_name": "Townhouse",
     "description": "A spacious townhome with plenty of room for the whole family.",
     "price": "$450,000",
@@ -129,7 +129,7 @@
     "area": "2,200 sq ft",
     "location": "789 Maple Street, Suburbia",
     "facilities": ["Playground", "Community clubhouse", "Private patio"],
-    "image": "image9.jpg",
+    "image": "https://i.ibb.co/McSfCnr/townhome.jpg",
     "lat": 41.8781,
     "lng": -87.6298
   },
@@ -143,27 +143,9 @@
     "area": "10,000 sq ft",
     "location": "123 Ocean Drive, Seaside",
     "facilities": ["Private beach access", "Indoor pool", "Home theater"],
-    "image": "image10.jpg",
+    "image": "https://i.ibb.co/4Ps5wYc/ocean-mansion.jpg",
     "lat": 25.7617,
     "lng": -80.1918
-  },
-  {
-    "id": 11,
-    "estate_title": "Mountain Retreat Cabin",
-    "segment_name": "Vacation Rental",
-    "description": "A cozy cabin nestled in the mountains, perfect for nature lovers.",
-    "price": "$250/night",
-    "status": "rent",
-    "area": "1,200 sq ft",
-    "location": "456 Mountain Trail, Pine Valley",
-    "facilities": [
-      "Wood-burning fireplace",
-      "Hiking trails nearby",
-      "Deck with scenic views"
-    ],
-    "image": "image11.jpg",
-    "lat": 39.5501,
-    "lng": -105.7821
   },
   {
     "id": 12,
@@ -179,23 +161,9 @@
       "Close to public transportation",
       "Fitness center in building"
     ],
-    "image": "image12.jpg",
+    "image": "https://i.ibb.co/PDKvnpg/studio-apartment.jpg",
     "lat": 40.7128,
     "lng": -74.006
-  },
-  {
-    "id": 13,
-    "estate_title": "Country Farmhouse",
-    "segment_name": "Country Home",
-    "description": "A charming farmhouse surrounded by acres of scenic countryside.",
-    "price": "$750,000",
-    "status": "sale",
-    "area": "3,500 sq ft",
-    "location": "789 Farm Road, Rural Valley",
-    "facilities": ["Wrap-around porch", "Barn and stable", "Vegetable garden"],
-    "image": "image13.jpg",
-    "lat": 41.8781,
-    "lng": -87.6298
   },
   {
     "id": 14,
@@ -207,27 +175,9 @@
     "area": "2,000 sq ft",
     "location": "123 Snowy Lane, Alpine Village",
     "facilities": ["Ski-in/ski-out access", "Hot tub", "Fireplace"],
-    "image": "image14.jpg",
+    "image": "https://i.ibb.co/wB0F1GY/urban.jpg",
     "lat": 45.6769,
     "lng": -111.0429
-  },
-  {
-    "id": 15,
-    "estate_title": "City Penthouse",
-    "segment_name": "Luxury Apartment",
-    "description": "A luxurious penthouse with panoramic views of the city skyline.",
-    "price": "$3,000,000",
-    "status": "sale",
-    "area": "4,000 sq ft",
-    "location": "789 Skyline Avenue, Metropolitan City",
-    "facilities": [
-      "Private rooftop terrace",
-      "Infinity pool",
-      "Concierge service"
-    ],
-    "image": "image15.jpg",
-    "lat": 34.0522,
-    "lng": -118.2437
   },
   {
     "id": 16,
@@ -239,63 +189,63 @@
     "area": "1,000 sq ft",
     "location": "123 Beachside Avenue, Coastal Paradise",
     "facilities": ["Private beach access", "Outdoor shower", "Ocean view deck"],
-    "image": "image16.jpg",
+    "image": "https://i.ibb.co/wB0F1GY/urban.jpg",
     "lat": 33.9416,
     "lng": -118.4085
   },
   {
     "id": 17,
     "estate_title": "Historic Manor House",
-    "segment_name": "Heritage Property",
+    "segment_name": "senior living communities",
     "description": "An elegant manor house with a rich history, offering grand living spaces and extensive gardens.",
     "price": "$2,000,000",
     "status": "sale",
     "area": "8,000 sq ft",
     "location": "456 Manor Lane, Stately Town",
     "facilities": ["Formal dining room", "Library", "Tennis court"],
-    "image": "image17.jpg",
+    "image": "https://i.ibb.co/wB0F1GY/urban.jpg",
     "lat": 51.5074,
     "lng": -0.1278
   },
   {
     "id": 18,
     "estate_title": "Riverside Retreat",
-    "segment_name": "Country Home",
+    "segment_name": "vacation rentals",
     "description": "A serene retreat nestled along the riverbank, offering tranquil views and outdoor recreation opportunities.",
     "price": "$600,000",
     "status": "sale",
     "area": "2,500 sq ft",
     "location": "789 River Road, Waterside Haven",
     "facilities": ["Deck overlooking river", "Boat dock", "Fire pit"],
-    "image": "image18.jpg",
+    "image": "https://i.ibb.co/wB0F1GY/urban.jpg",
     "lat": 37.7749,
     "lng": -122.4194
   },
   {
     "id": 19,
     "estate_title": "Golf Course Villa",
-    "segment_name": "Golf Community",
+    "segment_name": "Vacation Rentals",
     "description": "A luxurious villa located within a prestigious golf community, offering upscale amenities and stunning views.",
     "price": "$1,200,000",
     "status": "sale",
     "area": "3,200 sq ft",
     "location": "123 Fairway Drive, Golf Estates",
     "facilities": ["Golf course views", "Swimming pool", "Clubhouse access"],
-    "image": "image19.jpg",
+    "image": "https://i.ibb.co/wB0F1GY/urban.jpg",
     "lat": 33.4484,
     "lng": -112.074
   },
   {
     "id": 20,
     "estate_title": "Lakefront Log Cabin",
-    "segment_name": "Vacation Rental",
+    "segment_name": "Vacation Rentals",
     "description": "A cozy log cabin nestled by the lake, offering rustic charm and picturesque views.",
     "price": "$200/night",
     "status": "rent",
     "area": "1,500 sq ft",
     "location": "456 Lakeview Lane, Serene Retreat",
     "facilities": ["Private dock", "Fireplace", "Screened porch"],
-    "image": "image20.jpg",
+    "image": "https://i.ibb.co/wB0F1GY/urban.jpg",
     "lat": 48.8566,
     "lng": 2.3522
   }

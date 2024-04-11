@@ -1,13 +1,13 @@
 import { useParams, useLoaderData, Link } from "react-router-dom";
-import image from "../../assets/images/loft.jpg";
 import MapBox from "../../shared/MapBox/MapBox";
 import { FaArrowRight } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
-import { FaMoneyBillAlt } from "react-icons/fa";
+import useDocumentTitle from "../../utils/useDocumentTitle";
 
 function EstateDetails() {
   const data = useLoaderData();
   const { id: estateId } = useParams();
+  useDocumentTitle("Cozy | Details");
   const estateData = data.find((item) => item.id === Number(estateId));
   const {
     id,
@@ -18,6 +18,7 @@ function EstateDetails() {
     status,
     area,
     location,
+    image,
     facilities,
     lat,
     lng,
@@ -34,7 +35,11 @@ function EstateDetails() {
       <div className="grid lg:grid-cols-2 gap-6 ">
         <div className="col-span-1 ">
           <h3 className="text-4xl font-bold font-mon py-8">{title}</h3>
-          <img src={image} alt="" className="rounded-3xl" />
+          <img
+            src={image}
+            alt=""
+            className="rounded-3xl h-80 w-full object-cover"
+          />
           <h3 className="text-2xl font-semibold mt-2">{segment_name}</h3>
           <p className=" mt-2">{description} </p>
           <p className="mt-2">
@@ -86,7 +91,7 @@ function EstateDetails() {
                 className="border-2 border-cozy-green rounded-3xl p-4"
                 key={i}
               >
-                <img src={image} alt="" className="rounded-3xl" />
+                <img src={item.image} alt="" className="rounded-3xl" />
                 <h3 className="text-xl font-mon  mt-2 font-bold">
                   {item.estate_title}
                 </h3>

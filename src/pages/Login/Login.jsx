@@ -7,8 +7,10 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import SocialLogin from "../../shared/SocialLogin/SocialLogin";
+import useDocumentTitle from "../../utils/useDocumentTitle";
 
 function Login() {
+  useDocumentTitle("Cozy | Login");
   const navigate = useNavigate();
   const location = useLocation();
   const [passType, setPassType] = useState(true);
