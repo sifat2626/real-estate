@@ -59,7 +59,7 @@ function Listings() {
             open && "scale-0 md:scale-1"
           }`}
         >
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-x-6 lg:gap-x-2 gap-y-6">
+          <div className="grid extra:grid-cols-3 md:grid-cols-2 gap-x-6 lg:gap-x-2 gap-y-6">
             {filteredData.map((estate) => (
               <EstateCard
                 className="col-span-1"

@@ -11,6 +11,9 @@ export default {
         "cozy-green": "#3E895B",
         "cozy-yellow": "#FFD166",
       },
+      screens: {
+        extra: "1150px",
+      },
     },
   },
   plugins: [require("daisyui")],
