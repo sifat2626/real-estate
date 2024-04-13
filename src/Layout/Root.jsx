@@ -5,7 +5,7 @@ import { Toaster } from "react-hot-toast";
 function Root() {
   return (
     <div className="font-open text-cozy-green">
-      <div className="md:custom-container px-2 md:px-0">
+      <div className="md:custom-container px-2 md:px-0 mx-auto">
         <Navbar />
         <Outlet />
       </div>
