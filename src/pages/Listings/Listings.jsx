@@ -60,7 +60,7 @@ function Listings() {
           }`}
         >
           <div className="grid extra:grid-cols-3 md:grid-cols-2 gap-x-6 lg:gap-x-2 gap-y-6">
-            {filteredData.map((estate) => (
+            {filteredData.map((estate, i) => (
               <EstateCard
                 className="col-span-1"
                 key={estate.id}
@@ -71,6 +71,7 @@ function Listings() {
                 status={estate.status}
                 facilities={estate.facilities}
                 image={estate.image}
+                delay={i * 220}
                 // type={"sm"}
               />
             ))}

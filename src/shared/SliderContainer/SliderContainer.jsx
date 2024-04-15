@@ -13,7 +13,7 @@ import Slide from "../../components/Slide/Slide";
 const slides = [
   {
     id: 1,
-    image: "https://i.ibb.co/wB0F1GY/urban.jpg",
+    image: "https://i.ibb.co/hH1zd57/2-1.jpg",
     title: "Luxurious Urban Living Awaits",
     description:
       "Discover the epitome of urban luxury with our stunning collection of high-end properties in vibrant city centers. Explore now.",
@@ -22,7 +22,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "https://i.ibb.co/31wdxMF/villa.jpg",
+    image: "https://i.ibb.co/zQgGfhX/3-1.jpg",
     title: "Seaside Serenity Beckons",
     description:
       "Escape to your own private oasis with our exclusive selection of seaside villas offering unparalleled luxury and breathtaking ocean views.",
@@ -31,7 +31,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "https://i.ibb.co/7N9GzbY/sea-side.jpg",
+    image: "https://i.ibb.co/rkJ5F9y/1-1.jpg",
     title: "Sleek Modern Living Spaces",
     description:
       "Embrace the energy of downtown living with our chic modern lofts, meticulously designed to offer style, convenience, and sophistication.",
@@ -40,7 +40,7 @@ const slides = [
   },
   {
     id: 4,
-    image: "https://i.ibb.co/j6p3nPF/mountain-cabin.jpg",
+    image: "https://i.ibb.co/6JLDZpT/4-1.jpg",
     title: "Escape to Nature's Tranquility",
     description:
       "Experience the beauty of mountain living with our cozy cabins nestled amidst scenic splendor. Your perfect retreat awaits.",

@@ -18,8 +18,8 @@ function EstateContainer() {
         heading={"Find Your Dream Property"}
         text={`Explore our curated collection of premium listings. Your perfect home is waiting to be discovered. Start exploring today.`}
       />
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-6">
-        {estateData?.slice(0, 9).map((estate) => (
+      <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-6">
+        {estateData?.slice(0, 9).map((estate, i) => (
           <EstateCard
             key={estate.id}
             id={estate.id}
@@ -29,8 +29,10 @@ function EstateContainer() {
             status={estate.status}
             facilities={estate.facilities}
             image={estate.image}
+            delay={i * 300}
           />
         ))}
+        <div id="card-anchor" className="absolute right-0"></div>
       </div>
       <div className="mt-8 text-center">
         <Link

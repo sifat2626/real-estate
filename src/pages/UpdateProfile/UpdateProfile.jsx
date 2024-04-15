@@ -47,7 +47,7 @@ function UpdateProfile() {
               type="text"
               name="name"
               className="w-full bg-white rounded-lg p-2 mt-2"
-              placeholder={user.displayName}
+              defaultValue={user.displayName}
             />
           </div>
           <div className="form-control mt-4">

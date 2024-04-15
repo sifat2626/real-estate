@@ -3,7 +3,12 @@ import SliderContainer from "../SliderContainer/SliderContainer";
 
 function Banner() {
   return (
-    <div className="">
+    <div
+      data-aos="fade-up"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      className=""
+    >
       <Heading
         heading={"Find Your Perfect Sanctuary"}
         text={`Explore a curated collection of homes, tailored to fit your lifestyle.
