@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import { FiMenu } from "react-icons/fi";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-hot-toast";
 
@@ -16,6 +16,7 @@ const categories = [
 
 function Navbar() {
   const { user, logout } = useContext(AuthContext);
+  const [isCatOpen, setIsCatOpen] = useState(false);
   const handleLogout = () => {
     logout()
       .then()
@@ -58,17 +59,26 @@ function Navbar() {
         </NavLink>
       </li>
       <div className="dropdown">
-        <div tabIndex={0} role="button" className="font-semibold">
+        <div
+          tabIndex={0}
+          role="button"
+          className="font-semibold"
+          onClick={() => setIsCatOpen(!isCatOpen)}
+        >
           Categories
         </div>
-        {categories.length > 0 && (
+        {categories.length > 0 && isCatOpen && (
           <ul
             tabIndex={0}
             className="dropdown-content z-[1] bg-gray-50 text-cozy-green font-semibold p-2 shadow rounded-box w-52"
           >
             {categories.map((category, i) => (
               <li key={i} className="p-2">
-                <NavLink className="" to={`listings?category=${category}`}>
+                <NavLink
+                  className=""
+                  to={`listings?category=${category}`}
+                  onClick={() => setIsCatOpen(!isCatOpen)}
+                >
                   {category}
                 </NavLink>
               </li>
@@ -82,6 +92,13 @@ function Navbar() {
           About
         </NavLink>
       </li>
+      {user && (
+        <li>
+          <NavLink to={"/user-profile"} className={menuClassName}>
+            User Profile
+          </NavLink>
+        </li>
+      )}
     </>
   );
   return (

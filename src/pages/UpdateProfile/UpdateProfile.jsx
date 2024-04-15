@@ -3,6 +3,8 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import PageTitle from "../../components/PageTitle/PageTitle";
+import SideNav from "../../shared/SideNav/SideNav";
+import ProfileNav from "../../shared/ProfileNav/ProfileNav";
 
 function UpdateProfile() {
   const { user, updateUser } = useContext(AuthContext);
@@ -27,48 +29,50 @@ function UpdateProfile() {
     handleUpdateUser(displayName, photoURL);
   };
   return (
-    <div className="mt-12 lg:w-1/2 mx-auto">
-      <PageTitle title={"Update Profile"} />
-      <p className="text-center mb-8 text-4xl font-semibold font-mon">
-        My Profille
-      </p>
-      <form onSubmit={(e) => handleUpdateProfile(e)}>
-        <div className="bg-cozy-green p-4 rounded-3xl">
-          <div className="form-control">
-            <label className="text-white">Email</label>
-            <input
-              type="email"
-              className="w-full bg-white rounded-lg p-2 mt-2"
-              placeholder={user.email || "No Email Found"}
-              disabled
-            />
+    <ProfileNav>
+      <div className="mt-12 lg:w-1/2 mx-auto">
+        <PageTitle title={"Update Profile"} />
+        <p className="text-center mb-8 text-4xl font-semibold font-mon">
+          My Profille
+        </p>
+        <form onSubmit={(e) => handleUpdateProfile(e)}>
+          <div className="bg-cozy-green p-4 rounded-3xl">
+            <div className="form-control">
+              <label className="text-white">Email</label>
+              <input
+                type="email"
+                className="w-full bg-white rounded-lg p-2 mt-2"
+                placeholder={user.email || "No Email Found"}
+                disabled
+              />
+            </div>
+            <div className="form-control mt-4">
+              <label className="text-white">Name</label>
+              <input
+                type="text"
+                name="name"
+                className="w-full bg-white rounded-lg p-2 mt-2"
+                defaultValue={user.displayName}
+              />
+            </div>
+            <div className="form-control mt-4">
+              <label className="text-white">PhotoURL</label>
+              <input
+                type="text"
+                name="photo"
+                className="w-full bg-white rounded-lg p-2 mt-2"
+                placeholder={user.photoURL}
+              />
+            </div>
+            <div className="text-center mt-4">
+              <button className="bg-white font-semibold px-4 py-2 rounded-lg">
+                Update
+              </button>
+            </div>
           </div>
-          <div className="form-control mt-4">
-            <label className="text-white">Name</label>
-            <input
-              type="text"
-              name="name"
-              className="w-full bg-white rounded-lg p-2 mt-2"
-              defaultValue={user.displayName}
-            />
-          </div>
-          <div className="form-control mt-4">
-            <label className="text-white">PhotoURL</label>
-            <input
-              type="text"
-              name="photo"
-              className="w-full bg-white rounded-lg p-2 mt-2"
-              placeholder={user.photoURL}
-            />
-          </div>
-          <div className="text-center mt-4">
-            <button className="bg-white font-semibold px-4 py-2 rounded-lg">
-              Update
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
+    </ProfileNav>
   );
 }
 
