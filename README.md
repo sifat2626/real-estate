@@ -12,6 +12,7 @@ Explore the live CozyCrest website [here](https://real-estate-c27bf.web.app/).
 - **Combinational Filtering**: Refine your search with combinational filters to find properties that meet multiple criteria simultaneously.
 - **Firebase Authentication**: Securely authenticate users with email, Google, or GitHub accounts.
 - **Interactive Map**: Explore properties visually using the interactive map powered by `react-leaflet`.
+- **Manageable User Profile**: Users can view and manage their profile information, including name, email, profile picture, and saved properties.
 
 ## Packages Used:
 
