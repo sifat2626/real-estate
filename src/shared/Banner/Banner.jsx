@@ -7,6 +7,7 @@ function Banner() {
       data-aos="fade-up"
       data-aos-delay="50"
       data-aos-duration="1000"
+      data-aos-once="true"
       className=""
     >
       <Heading

@@ -6,10 +6,8 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import SocialLogin from "../../shared/SocialLogin/SocialLogin";
-import useDocumentTitle from "../../utils/useDocumentTitle";
 
 function Register() {
-  useDocumentTitle("Cozy | Register");
   const navigate = useNavigate();
   const location = useLocation();
   const [passType, setPassType] = useState(true);
@@ -57,6 +55,7 @@ function Register() {
 
   return (
     <div>
+      <PageTitle title={"Register"} />
       <div className=" mt-12 bg-cozy-green text-white p-6 rounded-3xl">
         <form onSubmit={handleSubmit(onSubmit)}>
           <label>Name</label>

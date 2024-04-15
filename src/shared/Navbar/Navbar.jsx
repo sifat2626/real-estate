@@ -5,6 +5,15 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-hot-toast";
 
+const categories = [
+  "Single-family home",
+  "Townhouse",
+  "Apartment",
+  "Student housing",
+  "Vacation rental",
+  "Senior living",
+];
+
 function Navbar() {
   const { user, logout } = useContext(AuthContext);
   const handleLogout = () => {
@@ -12,6 +21,7 @@ function Navbar() {
       .then()
       .catch((error) => toast.error(error.message));
   };
+
   const menuClassName =
     "hover:bg-[#2BAC6E] p-2 rounded-lg font-semibold lg:focus:bg-[#2BAC6E] focus:bg-gray-200 focus:text-white";
   const navList = (
@@ -47,6 +57,26 @@ function Navbar() {
           Listings
         </NavLink>
       </li>
+      <div className="dropdown">
+        <div tabIndex={0} role="button" className="font-semibold">
+          Categories
+        </div>
+        {categories.length > 0 && (
+          <ul
+            tabIndex={0}
+            className="dropdown-content z-[1] bg-gray-50 text-cozy-green font-semibold p-2 shadow rounded-box w-52"
+          >
+            {categories.map((category, i) => (
+              <li key={i} className="p-2">
+                <NavLink className="" to={`listings?category=${category}`}>
+                  {category}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
       <li>
         <NavLink to={"/about"} className={menuClassName}>
           About

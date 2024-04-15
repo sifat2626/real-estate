@@ -18,7 +18,7 @@ const slides = [
     description:
       "Discover the epitome of urban luxury with our stunning collection of high-end properties in vibrant city centers. Explore now.",
     buttonLabel: "Explore Properties",
-    buttonLink: "/properties",
+    buttonLink: "/listings",
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const slides = [
     description:
       "Escape to your own private oasis with our exclusive selection of seaside villas offering unparalleled luxury and breathtaking ocean views.",
     buttonLabel: "Find Your Retreat",
-    buttonLink: "/properties",
+    buttonLink: "/listings?category=Single-family%20home",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const slides = [
     description:
       "Embrace the energy of downtown living with our chic modern lofts, meticulously designed to offer style, convenience, and sophistication.",
     buttonLabel: "Discover Urban Living",
-    buttonLink: "/properties",
+    buttonLink: "/listings?category=Apartment",
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const slides = [
     description:
       "Experience the beauty of mountain living with our cozy cabins nestled amidst scenic splendor. Your perfect retreat awaits.",
     buttonLabel: "Explore Mountain Homes",
-    buttonLink: "/properties",
+    buttonLink: "/listings?category=Vacation%20rental",
   },
 ];
 

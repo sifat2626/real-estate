@@ -1,8 +1,9 @@
-import React from "react";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 function About() {
   return (
     <div className="p-6">
+      <PageTitle title={"About"} />
       <h1 className="text-2xl font-bold mb-4 font-mon">
         Welcome to CozyCrest - Your Gateway to Comfort and Luxury Living!
       </h1>

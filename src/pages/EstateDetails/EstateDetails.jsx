@@ -2,12 +2,11 @@ import { useParams, useLoaderData, Link } from "react-router-dom";
 import MapBox from "../../shared/MapBox/MapBox";
 import { FaArrowRight } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
-import useDocumentTitle from "../../utils/useDocumentTitle";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 function EstateDetails() {
   const data = useLoaderData();
   const { id: estateId } = useParams();
-  useDocumentTitle("Cozy | Details");
   const estateData = data.find((item) => item.id === Number(estateId));
   const {
     id,
@@ -32,6 +31,7 @@ function EstateDetails() {
   };
   return (
     <div>
+      <PageTitle title={"Details"} />
       <div className="grid lg:grid-cols-2 gap-6 ">
         <div className="col-span-1 ">
           <h3 className="text-4xl font-bold font-mon py-8">{title}</h3>
@@ -91,7 +91,11 @@ function EstateDetails() {
                 className="border-2 border-cozy-green rounded-3xl p-4"
                 key={i}
               >
-                <img src={item.image} alt="" className="rounded-3xl" />
+                <img
+                  src={item.image}
+                  alt=""
+                  className="rounded-3xl h-56 w-full"
+                />
                 <h3 className="text-xl font-mon  mt-2 font-bold">
                   {item.estate_title}
                 </h3>

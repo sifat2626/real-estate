@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import SideNav from "../../shared/SideNav/SideNav";
 import { useLoaderData, useSearchParams } from "react-router-dom";
 import EstateCard from "../../components/EstateCard/EstateCard";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 function Listings() {
   const [open, setOpen] = useState(false);
@@ -12,10 +13,6 @@ function Listings() {
   const category = searchParams.get("category");
   const type = searchParams.get("type");
   const allData = useLoaderData();
-
-  useEffect(() => {
-    document.title = "Cozy | Listings";
-  }, []);
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
@@ -44,6 +41,8 @@ function Listings() {
 
   return (
     <div className="flex">
+      <PageTitle title={"Listings"} />
+
       <div>
         <SideNav
           open={open}

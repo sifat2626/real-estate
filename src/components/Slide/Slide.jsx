@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 
 /* eslint-disable react/prop-types */
@@ -22,12 +24,12 @@ function Slide({ image, title, description, buttonLabel, buttonLink }) {
             {title}
           </h2>
           <p className="lg:text-lg mb-4">{description}</p>
-          <a
-            href={buttonLink}
+          <Link
+            to={buttonLink}
             className="btn font-bold bg-cozy-yellow outline-none border-none text-cozy-green text-lg"
           >
             {buttonLabel}
-          </a>
+          </Link>
         </div>
       </div>
     </div>

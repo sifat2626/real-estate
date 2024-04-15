@@ -2,10 +2,9 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import useDocumentTitle from "../../utils/useDocumentTitle";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 function UpdateProfile() {
-  useDocumentTitle("Cozy | Update Profile");
   const { user, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -27,6 +26,7 @@ function UpdateProfile() {
   };
   return (
     <div className="mt-12 lg:w-1/2 mx-auto">
+      <PageTitle title={"Update Profile"} />
       <p className="text-center mb-8 text-4xl font-semibold font-mon">
         My Profille
       </p>

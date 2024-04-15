@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import useDocumentTitle from "../../utils/useDocumentTitle";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 function ErrorPage() {
-  useDocumentTitle("Cozy | Error");
   return (
     <div className="min-h-screen flex flex-col justify-center items-center">
+      <PageTitle title={"Error"} />
+
       <div className="bg-white border-8 border-cozy-green rounded-3xl p-8">
         <h1 className="text-6xl font-bold text-cozy-green mb-4">404</h1>
         <p className="text-2xl font-semibold text-red-400 mb-6">
