@@ -28,7 +28,7 @@ function PrivateRoute({ children }) {
     return <div>{children}</div>;
   }
 
-  return <Navigate state={location.pathname} to={"/login"} />;
+  return <Navigate state={location.pathname} to={"/login"} replace />;
 }
 
 export default PrivateRoute;

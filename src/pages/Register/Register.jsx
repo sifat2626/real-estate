@@ -1,9 +1,15 @@
 /* eslint-disable no-unused-vars */
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useNavigate, useLocation, Link } from "react-router-dom";
+import {
+  useNavigate,
+  useLocation,
+  Link,
+  useSearchParams,
+  Navigate,
+} from "react-router-dom";
 import { toast } from "react-hot-toast";
 import SocialLogin from "../../shared/SocialLogin/SocialLogin";
 import PageTitle from "../../components/PageTitle/PageTitle";
@@ -13,19 +19,32 @@ function Register() {
   const location = useLocation();
   const [passType, setPassType] = useState(true);
   const [confirmPassType, setConfirmPassType] = useState(true);
+  // const [searchParams, setSearchParams] = useSearchParams();
+  // const state = searchParams.get("state");
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     getValues,
   } = useForm();
-  const { signUp, updateUser } = useContext(AuthContext);
+  const { signUp, updateUser, setUser } = useContext(AuthContext);
 
   const handleUpdateUser = (name, photoURL) => {
     updateUser(name, photoURL)
-      .then()
+      .then(() => {
+        setUser((prevUser) => {
+          return { ...prevUser, displayName: name, photoURL };
+        });
+      })
       .catch((error) => toast.error(error));
   };
+
+  // location.state = state;
+
+  // useEffect(() => {
+  //   console.log(location.state);
+  // });
+  console.log(location);
 
   const onSubmit = ({ name, photoURL, email, password }) => {
     // Password verification
@@ -47,8 +66,9 @@ function Register() {
       .then((result) => {
         handleUpdateUser(name, photoURL);
         toast.success("Registration Successful");
-        navigate(location?.state ? location.state : "/");
-        window.location.reload();
+        navigate(location.state || "/");
+        // <Navigate state={location.state} />;
+        // window.location.reload();
       })
       .catch((error) => {
         toast.error(error.message);
@@ -156,7 +176,12 @@ function Register() {
           <div className="mt-4 text-center">
             <p>
               Already have an account?{" "}
-              <Link to={"/login"} className="underline text-cozy-yellow">
+              <Link
+                to={"/login"}
+                className="underline text-cozy-yellow"
+                state={location.state}
+                replace
+              >
                 Login
               </Link>
             </p>

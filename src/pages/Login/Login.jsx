@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -13,6 +13,7 @@ function Login() {
   const navigate = useNavigate();
   const location = useLocation();
   const [passType, setPassType] = useState(true);
+
   const {
     register,
     handleSubmit,
@@ -20,6 +21,10 @@ function Login() {
   } = useForm();
 
   const { login } = useContext(AuthContext);
+
+  useEffect(() => {
+    console.log(location);
+  });
 
   const onSubmit = ({ email, password }) => {
     login(email, password)
@@ -34,7 +39,7 @@ function Login() {
   return (
     <div className="">
       <PageTitle title={"Login"} />
-      <div className=" mt-12 bg-cozy-green text-white p-6 rounded-3xl">
+      <div className="extra:w-2/3 mx-auto mt-12 bg-cozy-green text-white p-6 rounded-3xl">
         <form onSubmit={handleSubmit(onSubmit)}>
           <label>Email</label>
           <input
@@ -85,7 +90,12 @@ function Login() {
           <div className="mt-4 text-center">
             <p>
               Don't have an account?{" "}
-              <Link to={"/register"} className="underline text-cozy-yellow">
+              <Link
+                to={`/register?state=${location?.state}`}
+                className="underline text-cozy-yellow"
+                state={location.state}
+                replace
+              >
                 Create an account
               </Link>
             </p>

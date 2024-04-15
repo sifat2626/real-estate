@@ -7,7 +7,7 @@ import SideNav from "../../shared/SideNav/SideNav";
 import ProfileNav from "../../shared/ProfileNav/ProfileNav";
 
 function UpdateProfile() {
-  const { user, updateUser } = useContext(AuthContext);
+  const { user, updateUser, setUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleUpdateUser = (name, photoURL) => {
@@ -15,12 +15,14 @@ function UpdateProfile() {
       .then(() => {
         toast.success("Profile Updated Successfully!");
         navigate("/");
-        window.location.reload();
+        setUser((prevUser) => {
+          return { ...prevUser, displayName: name, photoURL };
+        });
       })
       .catch((error) => toast.error(error.message));
   };
 
-  console.log(user);
+  // console.log(user);
 
   const handleUpdateProfile = (e) => {
     e.preventDefault();
@@ -77,3 +79,7 @@ function UpdateProfile() {
 }
 
 export default UpdateProfile;
+
+// setUser((prevUser)=>{
+//   return {...prevUser, displayName: name, photoURL:  photo};
+// })

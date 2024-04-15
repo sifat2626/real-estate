@@ -10,7 +10,7 @@ function UserProfile() {
   return (
     <ProfileNav>
       <PageTitle title={user?.displayName?.split(" ").at(0) || "Profile"} />
-      <div className="w-2/3 mx-auto mt-24 text-gray-50 relative">
+      <div className="md:w-2/3 mx-auto mt-24 text-gray-50 relative">
         {user.photoURL && (
           <div className="absolute -top-16 p-2 border-2 rounded-full bg-cozy-green left-1/2 -translate-x-1/2 ">
             <img
@@ -21,7 +21,7 @@ function UserProfile() {
           </div>
         )}
         <div
-          className={`bg-cozy-green p-8 rounded-xl text-xl flex flex-col gap-2`}
+          className={`bg-cozy-green p-8 rounded-xl md:text-xl flex flex-col gap-2`}
         >
           {user.photoURL && <div className="mt-4"></div>}
           {user.displayName && <h3>Name: {user.displayName}</h3>}

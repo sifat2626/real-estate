@@ -87,15 +87,10 @@ function Navbar() {
         )}
       </div>
 
-      <li>
-        <NavLink to={"/about"} className={menuClassName}>
-          About
-        </NavLink>
-      </li>
       {user && (
         <li>
           <NavLink to={"/user-profile"} className={menuClassName}>
-            User Profile
+            Profile
           </NavLink>
         </li>
       )}
@@ -124,7 +119,7 @@ function Navbar() {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className=" flex gap-4 items-center">{navList}</ul>
+        <ul className=" flex gap-3 items-center">{navList}</ul>
       </div>
       <div className="navbar-end">
         {!user && (

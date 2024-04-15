@@ -55,6 +55,7 @@ function AuthProvider({ children }) {
     googleLogIn,
     githubLogIn,
     updateUser,
+    setUser,
   };
 
   useEffect(() => {
