@@ -26,6 +26,7 @@ function Login() {
       .then((result) => {
         navigate(location?.state ? location.state : "/");
         toast.success("Login Successful");
+        // window.location.reload();
       })
       .catch((error) => toast.error("Password Didn't match"));
   };

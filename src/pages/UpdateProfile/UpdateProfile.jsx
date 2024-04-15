@@ -18,6 +18,8 @@ function UpdateProfile() {
       .catch((error) => toast.error(error.message));
   };
 
+  console.log(user);
+
   const handleUpdateProfile = (e) => {
     e.preventDefault();
     const displayName = e.target.name.value || user.displayName;
@@ -37,7 +39,7 @@ function UpdateProfile() {
             <input
               type="email"
               className="w-full bg-white rounded-lg p-2 mt-2"
-              placeholder={user.email}
+              placeholder={user.email || "No Email Found"}
               disabled
             />
           </div>

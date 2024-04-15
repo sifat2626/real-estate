@@ -6,6 +6,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate, useLocation, Link } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import SocialLogin from "../../shared/SocialLogin/SocialLogin";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 function Register() {
   const navigate = useNavigate();
@@ -47,6 +48,7 @@ function Register() {
         handleUpdateUser(name, photoURL);
         toast.success("Registration Successful");
         navigate(location?.state ? location.state : "/");
+        window.location.reload();
       })
       .catch((error) => {
         toast.error(error.message);
@@ -56,7 +58,7 @@ function Register() {
   return (
     <div>
       <PageTitle title={"Register"} />
-      <div className=" mt-12 bg-cozy-green text-white p-6 rounded-3xl">
+      <div className="extra:w-2/3 mx-auto mt-12 bg-cozy-green text-white p-6 rounded-3xl">
         <form onSubmit={handleSubmit(onSubmit)}>
           <label>Name</label>
           <input
