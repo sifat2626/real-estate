@@ -31,7 +31,7 @@ function EstateCard({
       data-aos-duration={1000}
       data-aos-once="false"
       data-aos-anchor="#card-anchor"
-      className="relative col-span-1 rounded-3xl border-2 border-cozy-green shadow-md shadow-cozy-green p-2 extra:p-4"
+      className="relative col-span-1 rounded-3xl border-2 border-cozy-green shadow-md shadow-cozy-green sm:p-4 sm:mx-16 md:mx-0 p-2 extra:p-4"
     >
       <div id="facility-anchor" className="absolute "></div>
       <div className="overflow-hidden rounded-3xl">
@@ -66,7 +66,7 @@ function EstateCard({
         </button>
       </div>
 
-      <div className="text-base mt-4">
+      <div className="text-base mt-4 grow">
         {facilities?.map((facility, i) => (
           <div
             data-aos-delay={i * 300}
@@ -80,11 +80,13 @@ function EstateCard({
             <span>
               <FaCheckCircle />
             </span>
-            <p className="text-sm extra:text-lg">{facility}</p>
+            <p className="text-sm sm:text-lg md:text-sm lg:text-base ">
+              {facility}
+            </p>
           </div>
         ))}
       </div>
-      <div className="flex justify-between mt-4 pb-2">
+      <div className=" flex justify-between mt-4 pb-2 ">
         <Link
           to={`/details/${id}`}
           className="text-sm extra:text-base flex gap-2 items-center hover:bg-green-800 bg-cozy-green px-3 py-2 rounded-lg text-gray-200 font-semibold"

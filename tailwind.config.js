@@ -9,10 +9,10 @@ export default {
       },
       colors: {
         "cozy-green": "#3E895B",
-        "cozy-yellow": "#FFD166",
+        "cozy-yellow": "#F2B950",
       },
       screens: {
-        extra: "1150px",
+        extra: "1170px",
       },
     },
   },
