@@ -5,7 +5,7 @@
 
 @layer base {
   .custom-container {
-    max-width: 81.25%;
+    max-width: 87.5%;
     margin: 0 auto;
   }
 }

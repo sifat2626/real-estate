@@ -7,12 +7,13 @@ import Register from "../pages/Register/Register";
 import Rent from "../pages/Rent/Rent";
 import Buy from "../pages/Buy/Buy";
 import About from "../pages/About/About";
-import Contact from "../pages/Contact/Contact";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import Listings from "../pages/Listings/Listings";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import UserProfile from "../pages/UserProfile/UserProfile";
+import WishList from "../pages/WishList/WishList";
+import Order from "../pages/Order/Order";
 
 export const router = createBrowserRouter([
   {
@@ -85,6 +86,24 @@ export const router = createBrowserRouter([
             <UserProfile />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/wishlist",
+        element: (
+          <PrivateRoute>
+            <WishList />
+          </PrivateRoute>
+        ),
+        loader: () => fetch("/estateData.json"),
+      },
+      {
+        path: "/order/:id",
+        element: (
+          <PrivateRoute>
+            <Order />
+          </PrivateRoute>
+        ),
+        loader: () => fetch("/estateData.json"),
       },
     ],
   },

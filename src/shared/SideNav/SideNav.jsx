@@ -41,7 +41,7 @@ function SideNav({ open, setOpen, data }) {
 
   return (
     <div
-      className={`bg-cozy-green min-h-screen h-full p-5 pt-8 relative mt-4 rounded-3xl ${
+      className={`bg-cozy-green min-h-screen h-full p-5 pt-8 relative mt-7 rounded-3xl ${
         open ? "w-72" : "w-20"
       } duration-300`}
     >
@@ -80,7 +80,7 @@ function SideNav({ open, setOpen, data }) {
 
         <input
           type="search"
-          placeholder="Search"
+          placeholder="Try Other Filters"
           className={`bg-transparent w-full focus:outline-none ${
             !open && "hidden"
           }`}

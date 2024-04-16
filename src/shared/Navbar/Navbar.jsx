@@ -62,7 +62,7 @@ function Navbar() {
         <div
           tabIndex={0}
           role="button"
-          className="font-semibold"
+          className="font-semibold focus:bg-[#2BAC6E] p-2 rounded-lg"
           onClick={() => setIsCatOpen(!isCatOpen)}
         >
           Categories

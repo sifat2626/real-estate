@@ -3,6 +3,8 @@ import MapBox from "../../shared/MapBox/MapBox";
 import { FaArrowRight } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
 import PageTitle from "../../components/PageTitle/PageTitle";
+import { useState } from "react";
+import { checkExists, setWishlist } from "../../utils/localStorage";
 
 function EstateDetails() {
   const data = useLoaderData();
@@ -26,6 +28,14 @@ function EstateDetails() {
   const similarItems = data.filter(
     (item) => item.segment_name === segment_name && item.id !== id
   );
+  const [isFav, setIsFav] = useState(() => {
+    return checkExists(id);
+  });
+
+  const handleButtonClick = () => {
+    setIsFav(!isFav);
+    setWishlist(id);
+  };
   const handleScrollToTop = () => {
     window.scrollTo(0, 0);
   };
@@ -57,24 +67,27 @@ function EstateDetails() {
               </p>
             ))}
           </div>
-          <p className="flex items-center gap-2 mt-2">
+          <div className="flex items-center gap-2 mt-2">
             <p className="font-bold text-lg">price:</p>
             <p className="font-bold">{price}</p>
-          </p>
+          </div>
           <div className="flex items-center justify-between mt-4">
             <Link
-              to={"/"}
-              className="inline-flex px-4 py-2 hover:bg-green-800 rounded-lg bg-cozy-green text-gray-200  font-semibold text-xl"
+              to={`/order/${id}`}
+              className="inline-flex px-4 py-2 hover:bg-cozy-yellow/90 text-cozy-green rounded-lg bg-cozy-yellow font-semibold text-xl"
             >
               {status === "sale" ? "buy" : "rent"}
             </Link>
-            <button className="text-3xl">
-              <span className="">
-                <ion-icon name="heart-outline"></ion-icon>
-              </span>
-              <span className="">
-                <ion-icon name="heart"></ion-icon>
-              </span>
+            <button className="text-3xl" onClick={handleButtonClick}>
+              {!isFav ? (
+                <span>
+                  <ion-icon name="heart-outline"></ion-icon>
+                </span>
+              ) : (
+                <span>
+                  <ion-icon name="heart"></ion-icon>
+                </span>
+              )}
             </button>
           </div>
         </div>

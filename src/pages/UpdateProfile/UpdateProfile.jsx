@@ -35,7 +35,7 @@ function UpdateProfile() {
       <div className="mt-12 lg:w-1/2 mx-auto">
         <PageTitle title={"Update Profile"} />
         <p className="text-center mb-8 text-4xl font-semibold font-mon">
-          My Profille
+          Update Profile
         </p>
         <form onSubmit={(e) => handleUpdateProfile(e)}>
           <div className="bg-cozy-green p-4 rounded-3xl">

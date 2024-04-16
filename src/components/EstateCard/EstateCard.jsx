@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useState } from "react";
 import { FaMoneyBillAlt, FaCheckCircle, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import toast from "react-hot-toast";
+import { checkExists, setWishlist } from "../../utils/localStorage";
+import { useState } from "react";
 
 function EstateCard({
   id,
@@ -16,20 +16,24 @@ function EstateCard({
   type,
   delay,
 }) {
-  const [isFav, setIsFav] = useState(false);
+  const [isFav, setIsFav] = useState(() => {
+    return checkExists(id);
+  });
+  console.log(isFav);
   const handleButtonClick = () => {
     setIsFav(!isFav);
-    !isFav && toast.success("Added to WishList!");
-    isFav && toast("⚠️ Removed from WishList!");
+    setWishlist(id);
   };
   return (
     <div
       data-aos="zoom-in"
       data-aos-delay={delay}
       data-aos-duration={1000}
+      data-aos-once="false"
       data-aos-anchor="#card-anchor"
-      className="col-span-1 rounded-3xl border-2 border-cozy-green shadow-md shadow-cozy-green p-2 extra:p-4"
+      className="relative col-span-1 rounded-3xl border-2 border-cozy-green shadow-md shadow-cozy-green p-2 extra:p-4"
     >
+      <div id="facility-anchor" className="absolute "></div>
       <div className="overflow-hidden rounded-3xl">
         <img
           src={image}
@@ -69,6 +73,7 @@ function EstateCard({
             data-aos-duration={1000}
             data-aos="fade-right"
             data-aos-once="true"
+            data-aos-anchor="#facility-anchor"
             className="flex gap-2 items-center font-bold mt-1"
             key={i}
           >
@@ -86,7 +91,10 @@ function EstateCard({
         >
           View Property <FaArrowRight />
         </Link>
-        <Link className="text-sm bg-cozy-yellow/90 hover:bg-cozy-yellow text-cozy-green px-3 py-2 rounded-lg font-bold">
+        <Link
+          to={`/order/${id}`}
+          className="text-base bg-cozy-yellow/90 hover:bg-cozy-yellow text-cozy-green px-3 py-2 rounded-lg font-bold"
+        >
           {status === "sale" ? "Buy" : "Rent"}
         </Link>
       </div>
