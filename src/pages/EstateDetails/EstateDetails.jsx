@@ -46,14 +46,16 @@ function EstateDetails() {
   return (
     <div>
       <PageTitle title={"Details"} />
-      <div className="grid lg:grid-cols-2 gap-6 ">
+      <div className="grid lg:grid-cols-2 gap-6">
         <div className="col-span-1 ">
           <h3 className="text-4xl font-bold font-mon py-8">{title}</h3>
-          <img
-            src={image}
-            alt=""
-            className="rounded-3xl h-80 w-full object-cover"
-          />
+          <div className="overflow-hidden rounded-3xl">
+            <img
+              src={image}
+              alt=""
+              className="rounded-3xl h-80 w-full object-cover hover:scale-110 duration-300"
+            />
+          </div>
           <h3 className="text-2xl font-semibold mt-2">{segment_name}</h3>
           <p className=" mt-2">{description} </p>
           <p className="mt-2">
