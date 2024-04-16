@@ -3,7 +3,7 @@ import MapBox from "../../shared/MapBox/MapBox";
 import { FaArrowRight } from "react-icons/fa";
 import { FaCheckCircle } from "react-icons/fa";
 import PageTitle from "../../components/PageTitle/PageTitle";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { checkExists, setWishlist } from "../../utils/localStorage";
 
 function EstateDetails() {
@@ -31,6 +31,10 @@ function EstateDetails() {
   const [isFav, setIsFav] = useState(() => {
     return checkExists(id);
   });
+
+  useEffect(() => {
+    setIsFav(checkExists(id));
+  }, [id]);
 
   const handleButtonClick = () => {
     setIsFav(!isFav);
